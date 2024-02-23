@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.net.URI;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.function.Supplier;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -90,8 +91,11 @@ public class ResourceReaderFactory {
      */
     public ResourceReader create(final URI location) {
         return IOUtils.isLocalDirectory(location)?
-            new DirectoryResourceReader(Path.of(location), this) :
-            getResourceReader(() -> newInputStream(location), location);
+                !location.isAbsolute() ?
+                        new DirectoryResourceReader(Paths.get(location.getPath()), this) :
+                        new DirectoryResourceReader(Path.of(location), this)
+                :
+                getResourceReader(() -> newInputStream(location), location);
     }
 
     @NotNull
