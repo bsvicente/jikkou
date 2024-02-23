@@ -9,10 +9,9 @@ package io.streamthoughts.jikkou.client.command;
 import io.streamthoughts.jikkou.core.io.ResourceLoaderInputs;
 import io.streamthoughts.jikkou.core.models.NamedValue;
 import io.streamthoughts.jikkou.core.models.NamedValueSet;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
+
 import picocli.CommandLine.Option;
 
 public class FileOptionsMixin implements ResourceLoaderInputs {
@@ -56,6 +55,15 @@ public class FileOptionsMixin implements ResourceLoaderInputs {
             description = "Set variables on the command line to pass into the template engine built-in object 'Values' (can specify multiple values: -v key1=val1 -v key2=val2)"
     )
     public Map<String, Object> clientValues = new HashMap<>();
+
+    private FileOptionsMixin(List<String> resource) {
+        this.resourceFiles = resource;
+        this.pattern = "**/*.{yaml,yml}";
+    }
+
+    public static FileOptionsMixin createFileOptionsMixin(List<String> resource) {
+        return new FileOptionsMixin(resource);
+    }
 
     /** {@inheritDoc} **/
     @Override
