@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FileOptionsMixinTest {
 
-    private final FileOptionsMixin fileOptionsMixin = FileOptionsMixin.createFileOptionsMixin(List.of("/home/brendon/bpi/jikkou/"));
+    private final FileOptionsMixin fileOptionsMixin = FileOptionsMixin.createFileOptionsMixin(List.of("file:///C:/Users/Brendon/workspace/jikkou"), "**/*.{yaml,yml}");
 
     @Test
     void getResourceFileLocations() {
@@ -25,7 +25,7 @@ class FileOptionsMixinTest {
                 .withFailOnUnknownTokens(false);
         var resourceLoaderFacade = new ResourceLoaderFacade(renderer, Jackson.YAML_OBJECT_MAPPER);
 
-        var out = resourceLoaderFacade.load(fileOptionsMixin);
+        assertFalse(resourceLoaderFacade.load(fileOptionsMixin).getItems().isEmpty());
 
     }
 }

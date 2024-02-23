@@ -56,13 +56,16 @@ public class FileOptionsMixin implements ResourceLoaderInputs {
     )
     public Map<String, Object> clientValues = new HashMap<>();
 
-    private FileOptionsMixin(List<String> resource) {
+    private FileOptionsMixin(List<String> resource, String pattern) {
         this.resourceFiles = resource;
-        this.pattern = "**/*.{yaml,yml}";
+        this.pattern = pattern;
     }
 
     public static FileOptionsMixin createFileOptionsMixin(List<String> resource) {
-        return new FileOptionsMixin(resource);
+        return new FileOptionsMixin(resource, "**/*.{yaml,yml}");
+    }
+    public static FileOptionsMixin createFileOptionsMixin(List<String> resource, String pattern) {
+        return new FileOptionsMixin(resource, pattern);
     }
 
     /** {@inheritDoc} **/
