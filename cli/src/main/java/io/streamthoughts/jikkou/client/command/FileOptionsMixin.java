@@ -9,9 +9,7 @@ package io.streamthoughts.jikkou.client.command;
 import io.streamthoughts.jikkou.core.io.ResourceLoaderInputs;
 import io.streamthoughts.jikkou.core.models.NamedValue;
 import io.streamthoughts.jikkou.core.models.NamedValueSet;
-
 import java.util.*;
-
 import picocli.CommandLine.Option;
 
 public class FileOptionsMixin implements ResourceLoaderInputs {
@@ -56,17 +54,7 @@ public class FileOptionsMixin implements ResourceLoaderInputs {
     )
     public Map<String, Object> clientValues = new HashMap<>();
 
-    private FileOptionsMixin(List<String> resource, String pattern) {
-        this.resourceFiles = resource;
-        this.pattern = pattern;
-    }
 
-    public static FileOptionsMixin createFileOptionsMixin(List<String> resource) {
-        return new FileOptionsMixin(resource, "**/*.{yaml,yml}");
-    }
-    public static FileOptionsMixin createFileOptionsMixin(List<String> resource, String pattern) {
-        return new FileOptionsMixin(resource, pattern);
-    }
 
     /** {@inheritDoc} **/
     @Override
