@@ -13,9 +13,26 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
+import org.jetbrains.annotations.VisibleForTesting;
 import picocli.CommandLine.Option;
 
 public class FileOptionsMixin implements ResourceLoaderInputs {
+
+    protected FileOptionsMixin(List<String> resource, String pattern) {
+        this.resourceFiles = resource;
+        this.pattern = pattern;
+    }
+
+    @VisibleForTesting
+    static FileOptionsMixin createFileOptionsMixin(List<String> resource) {
+        return new FileOptionsMixin(resource, "**/*.{yaml,yml}");
+    }
+
+    @VisibleForTesting
+    static FileOptionsMixin createFileOptionsMixin(List<String> resource, String pattern) {
+        return new FileOptionsMixin(resource, pattern);
+    }
 
     @Option(
             names = {"--files", "-f"},
