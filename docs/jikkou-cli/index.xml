@@ -1,0 +1,204 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jikkou – Jikkou CLI Documentation</title><link>https://www.jikkou.io/docs/jikkou-cli/</link><description>Recent content in Jikkou CLI Documentation on Jikkou</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://www.jikkou.io/docs/jikkou-cli/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Basic CLI Features</title><link>https://www.jikkou.io/docs/jikkou-cli/basic-cli-features/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jikkou.io/docs/jikkou-cli/basic-cli-features/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>&lt;strong>Hands-on:&lt;/strong> Try the Jikkou: &lt;a href="https://www.jikkou.io/docs/tutorials/get_started/">Get Started tutorials&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;p>The command line interface to &lt;strong>Jikkou&lt;/strong> is the &lt;code>jikkou&lt;/code> command, which accepts a variety of subcommands such as
+&lt;code>jikkou apply&lt;/code> or &lt;code>jikkou validate&lt;/code>.&lt;/p>
+&lt;p>To view a list of the commands available in your current Jikkou version, run &lt;code>jikkou&lt;/code> with no additional arguments:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Usage:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jikkou &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-hV&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--logger-level&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;level&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>COMMAND&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Jikkou CLI:: A command-line client designed to provide an efficient and easy way to manage, automate, and provision all the assets of your data infrastructure.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Find more information at: https://streamthoughts.github.io/jikkou/.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OPTIONS:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h, --help Show this &lt;span style="color:#204a87">help&lt;/span> message and exit.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --logger-level&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;level&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Specify the log level verbosity to be used &lt;span style="color:#204a87;font-weight:bold">while&lt;/span> running a command.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Valid level values are: TRACE, DEBUG, INFO, WARN, ERROR.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> For example, &lt;span style="color:#4e9a06">`&lt;/span>--logger-level&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFO&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -V, --version Print version information and exit.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CORE COMMANDS:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apply Update the resources as described by the resource definition files.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> create Create resources from the resource definition files &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>only non-existing resources will be created&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> delete Delete resources that are no longer described by the resource definition files.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> diff Show changes required by the current resource definitions.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> get Display one or many specific resources.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prepare Prepare the resource definition files &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> validation.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> update Create or update resources from the resource definition files
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> validate Check whether the resources definitions meet all validation requirements.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SYSTEM MANAGEMENT COMMANDS:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> action List/execute actions.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> health Print or describe health indicators.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ADDITIONAL COMMANDS:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> api-extensions Print the supported API extensions
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> api-resources Print the supported API resources
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config Sets or retrieves the configuration of this client
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> generate-completion Generate bash/zsh completion script &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> jikkou.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">help&lt;/span> Display &lt;span style="color:#204a87">help&lt;/span> information about the specified command.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>(The output from your current Jikkou version may be different than the above example.)&lt;/p>
+&lt;h2 id="checking-jikkou-version">Checking Jikkou Version&lt;/h2>
+&lt;p>Run the &lt;code>jikkou --version&lt;/code> to display your current installation version:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Jikkou version &lt;span style="color:#4e9a06">&amp;#34;0.32.0&amp;#34;&lt;/span> 2023-11-28
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>JVM: 21.0.1 &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>GraalVM Community Substrate VM 21.0.1+12&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="shell-tab-completion">Shell Tab-completion&lt;/h2>
+&lt;p>It is recommended to install the bash/zsh completion script &lt;code>jikkou_completion&lt;/code>.&lt;/p>
+&lt;p>The completion script can be downloaded from the project Github repository:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>wget https://raw.githubusercontent.com/streamthoughts/jikkou/main/jikkou_completion . jikkou_completion
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or alternatively, you can run the following command to generate it.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">source&lt;/span> &amp;lt;&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>jikkou generate-completion&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: CLI Configuration</title><link>https://www.jikkou.io/docs/jikkou-cli/cli-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jikkou.io/docs/jikkou-cli/cli-configuration/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>&lt;strong>Hands-on:&lt;/strong> Try the Jikkou: &lt;a href="https://www.jikkou.io/docs/tutorials/get_started/">Get Started tutorials&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;h2 id="configuration">Configuration&lt;/h2>
+&lt;p>To set up the configuration settings used by Jikkou CLI, you will need create a &lt;em>jikkou config file&lt;/em>, which is created
+automatically when you create a configuration context using:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>jikkou config set-context &amp;lt;context-name&amp;gt; &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--config-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;config-gile&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--config-props&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;config-value&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>By default, the configuration of &lt;code>jikkou&lt;/code> is located under the path &lt;code>$HOME/.jikkou/config&lt;/code>.&lt;/p>
+&lt;p>This &lt;em>jikkou config file&lt;/em> defines all the contexts that can be used by jikkou CLI.&lt;/p>
+&lt;p>For example, below is the config file created during the &lt;a href="https://www.jikkou.io/docs/tutorials/get_started/">Getting Started&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;currentContext&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;localhost&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;localhost&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;configFile&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">null&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;configProps&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;kafka.client.bootstrap.servers&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;localhost:9092&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Most of the time, a &lt;em>context&lt;/em> does not directly contain the configuration properties to be used, but rather points to a
+specific &lt;a href="https://github.com/lightbend/config">HOCON (Human-Optimized Config Object Notation)&lt;/a> through the &lt;code>configFile&lt;/code> property.&lt;/p>
+&lt;p>Then, the &lt;code>configProps&lt;/code> allows you to override some of the property define by this file.&lt;/p>
+&lt;p>In addition, if no configuration file path is specified, Jikkou will lookup for an &lt;code>application.conf&lt;/code> to
+those following locations:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>./application.conf&lt;/code>&lt;/li>
+&lt;li>&lt;code>$HOME/.jikkou/application.conf&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Finally, Jikkou always fallback
+to a &lt;a href="https://github.com/streamthoughts/jikkou/blob/main/jikkou-cli/src/main/resources/reference.conf">reference.conf&lt;/a>
+file that you can use as a template to define your own configuration.&lt;/p>
+&lt;p>&lt;strong>&lt;em>reference.conf&lt;/em>&lt;/strong>:&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-hocon" data-lang="hocon">jikkou {
+extension.providers {
+# By default, disable all extensions
+default.enabled: true
+# Explicitly enabled/disable extensions
+#&amp;lt;provider_name&amp;gt;.enabled: &amp;lt;boolean&amp;gt;
+# schemaregistry.enabled = true
+# kafka.enabled = true
+# aiven.enabled = true
+# kafkaconnect.enabled = true
+}
+# Configure Jikkou Proxy Mode
+# proxy {
+# url = &amp;#34;http://localhost:8080&amp;#34;
+# }
+# Kafka Extension
+kafka {
+# The default Kafka Client configuration
+client {
+bootstrap.servers = &amp;#34;localhost:9092&amp;#34;
+bootstrap.servers = ${?JIKKOU_DEFAULT_KAFKA_BOOTSTRAP_SERVERS}
+}
+brokers {
+# If &amp;#39;True&amp;#39;
+waitForEnabled = true
+waitForEnabled = ${?JIKKOU_KAFKA_BROKERS_WAIT_FOR_ENABLED}
+# The minimal number of brokers that should be alive for the CLI stops waiting.
+waitForMinAvailable = 1
+waitForMinAvailable = ${?JIKKOU_KAFKA_BROKERS_WAIT_FOR_MIN_AVAILABLE}
+# The amount of time to wait before verifying that brokers are available.
+waitForRetryBackoffMs = 1000
+waitForRetryBackoffMs = ${?JIKKOU_KAFKA_BROKERS_WAIT_FOR_RETRY_BACKOFF_MS}
+# Wait until brokers are available or this timeout is reached.
+waitForTimeoutMs = 60000
+waitForTimeoutMs = ${?JIKKOU_KAFKA_BROKERS_WAIT_FOR_TIMEOUT_MS}
+}
+}
+schemaRegistry {
+url = &amp;#34;http://localhost:8081&amp;#34;
+url = ${?JIKKOU_DEFAULT_SCHEMA_REGISTRY_URL}
+}
+# The default custom transformations to apply on any resources.
+transformations = []
+# The default custom validations to apply on any resources.
+validations = [
+{
+name = &amp;#34;topicMustHaveValidName&amp;#34;
+type = io.streamthoughts.jikkou.kafka.validation.TopicNameRegexValidation
+priority = 100
+config = {
+topicNameRegex = &amp;#34;[a-zA-Z0-9\\._\\-]+&amp;#34;
+topicNameRegex = ${?VALIDATION_DEFAULT_TOPIC_NAME_REGEX}
+}
+},
+{
+name = &amp;#34;topicMustHavePartitionsEqualsOrGreaterThanOne&amp;#34;
+type = io.streamthoughts.jikkou.kafka.validation.TopicMinNumPartitionsValidation
+priority = 100
+config = {
+topicMinNumPartitions = 1
+topicMinNumPartitions = ${?VALIDATION_DEFAULT_TOPIC_MIN_NUM_PARTITIONS}
+}
+},
+{
+name = &amp;#34;topicMustHaveReplicasEqualsOrGreaterThanOne&amp;#34;
+type = io.streamthoughts.jikkou.kafka.validation.TopicMinReplicationFactorValidation
+priority = 100
+config = {
+topicMinReplicationFactor = 1
+topicMinReplicationFactor = ${?VALIDATION_DEFAULT_TOPIC_MIN_REPLICATION_FACTOR}
+}
+}
+]
+# The default custom reporters to report applied changes.
+reporters = [
+# Uncomment following lines to enable default kafka reporter
+# {
+# name = &amp;#34;default&amp;#34;
+# type = io.streamthoughts.jikkou.kafka.reporter.KafkaChangeReporter
+# config = {
+# event.source = &amp;#34;jikkou/cli&amp;#34;
+# kafka = {
+# topic.creation.enabled = true
+# topic.creation.defaultReplicationFactor = 1
+# topic.name = &amp;#34;jikkou-resource-change-event&amp;#34;
+# client = ${jikkou.kafka.client} {
+# client.id = &amp;#34;jikkou-reporter-producer&amp;#34;
+# }
+# }
+# }
+# }
+]
+}
+&lt;/code>&lt;/pre>&lt;h3 id="listing-contexts">Listing Contexts&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ jikkou config get-contexts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> NAME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> localhost *
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> development
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> staging
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> production
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="verify-current-context">Verify Current Context&lt;/h3>
+&lt;p>You can use &lt;code>jikkou config current-context&lt;/code> command to show the context currently used by Jikkou CLI.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ jikkou config current-context
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Using context &lt;span style="color:#4e9a06">&amp;#39;localhost&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> KEY VALUE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConfigFile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConfigProps &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;kafka.client.bootstrap.servers&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;localhost:9092&amp;#34;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="verify-current-configuration">Verify Current Configuration&lt;/h3>
+&lt;p>You can use &lt;code>jikkou config view&lt;/code> command to show the configuration currently used by Jikkou CLI.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tips&lt;/h4>
+To debug the configuration use by Jikkou, you can run the following command: &lt;code>jikkou config view --comments&lt;/code>
+or &lt;code>jikkou config view --debug&lt;/code>
+&lt;/div></description></item><item><title>Docs: Automating Jikkou</title><link>https://www.jikkou.io/docs/jikkou-cli/automating/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jikkou.io/docs/jikkou-cli/automating/</guid><description/></item></channel></rss>
